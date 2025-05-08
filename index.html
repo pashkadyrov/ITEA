@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тестування</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Вхід -->
+    <div class="form-box" id="login-box">
+      <h3>Вхід</h3>
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Пароль" required />
+      <button id="login-btn">Увійти</button>
+      <p>Немає акаунта? <a href="#" id="show-register">Реєстрація</a></p>
+      <button id="google-login">Увійти через Google</button>   
+    </div>
+
+    <!-- Реєстрація -->
+    <div class="form-box" id="register-box" style="display: none;">
+      <h3>Реєстрація</h3>
+      <input type="text" id="register-name" placeholder="Ім’я" required />
+      <input type="email" id="register-email" placeholder="Email" required />
+      <input type="password" id="register-password" placeholder="Пароль" required />
+      <button id="register-btn">Зареєструватися</button>
+      <p>Вже маєте акаунт? <a href="#" id="show-login">Увійти</a></p>
+    </div>
+  </div>
+
+  <div id="message-box" class="message" style="display:none;"></div>
+  <div id="form-message" style="
+  display: none;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+"></div>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

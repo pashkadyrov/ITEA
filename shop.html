@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="profile.html" class="header-link">Профіль</a>
+            <a href="shop.html" class="header-link">Магазин</a>
+            <a href="quests.html" class="header-link">Квести</a>
+            <a href="leaderboard.html" class="header-link">Лідерборд</a>
+            <a href="tests.html" class="header-link">Тести</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Магазин</h2>
+        <button onclick="buyHeart()">❤️ Купити серце (20 монет)</button>
+    </div>
+
+    <script>
+        function buyHeart() {
+            const coins = parseInt(localStorage.getItem("coins") || "0");
+            let hp = parseInt(localStorage.getItem("currentHp") || "5");
+            const maxHp = 5;
+
+            if (coins >= 20 && hp < maxHp) {
+                localStorage.setItem("coins", coins - 20);
+                localStorage.setItem("currentHp", hp + 1);
+                alert("Серце куплено!");
+            } else {
+                alert("Недостатньо монет або серце вже повне.");
+            }
+        }
+    </script>
+    <script src="js/theme-toggle.js"></script>
+</body>
+</html>
